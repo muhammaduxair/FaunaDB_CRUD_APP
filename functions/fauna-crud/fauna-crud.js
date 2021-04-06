@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { ApolloServer, gql } = require("apollo-server-lambda");
 const faunadb = require("faunadb"),
   q = faunadb.query;
@@ -24,7 +25,7 @@ const resolvers = {
   Query: {
     allData: async () => {
       var client = new faunadb.Client({
-        secret: process.env.FAUNA_ADMIN_TOKEN,
+        secret: process.env.FAUNADB_ADMIN_SECRET,
       });
 
       let allDocuments = await client.query(
@@ -43,7 +44,7 @@ const resolvers = {
   Mutation: {
     addData: async (_, args) => {
       var client = new faunadb.Client({
-        secret: process.env.FAUNA_ADMIN_TOKEN,
+        secret: process.env.FAUNADB_ADMIN_SECRET,
       });
       var res = await client.query(
         q.Create(q.Collection("crud"), {
@@ -57,7 +58,7 @@ const resolvers = {
     },
     updateDataByID: async (_, args) => {
       var client = new faunadb.Client({
-        secret: process.env.FAUNA_ADMIN_TOKEN,
+        secret: process.env.FAUNADB_ADMIN_SECRET,
       });
       var res = await client.query(
         q.Update(q.Ref(q.Collection("crud"), args.id), {
@@ -71,7 +72,7 @@ const resolvers = {
     },
     deleteByID: async (_, args) => {
       var client = new faunadb.Client({
-        secret: process.env.FAUNA_ADMIN_TOKEN,
+        secret: process.env.FAUNADB_ADMIN_SECRET,
       });
       var res = await client.query(
         q.Delete(q.Ref(q.Collection("crud"), args.id))
