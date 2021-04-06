@@ -3,5 +3,5 @@
   functions = "functions"
   publish = "public"
 
-[context.production]
-  environment = { FAUNADB_ADMIN_SECRET = "fnAEGGHS_5ACCL2JjcYDNjRAAyRu8-DZ6ASYDTvO"}
+[[plugins]]
+package = "@netlify/plugin-functions-install-core"
