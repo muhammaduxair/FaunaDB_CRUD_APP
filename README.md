@@ -12,6 +12,10 @@ Kick off your project with this default boilerplate. This starter ships with the
 
 _Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.com/docs/gatsby-starters/)._
 
+## App Hosted Link
+
+Open Link To View App [https://fauna-crud-muzair.netlify.app/](https://fauna-crud-muzair.netlify.app/)
+
 ## 🚀 Quick start
 
 1.  **Create a Gatsby site.**

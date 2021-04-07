@@ -111,7 +111,7 @@ const IndexPage = () => {
   };
   // ============================================
 
-  if (loading)
+  if (loading) {
     return (
       <Layout>
         <div
@@ -127,7 +127,9 @@ const IndexPage = () => {
         </div>
       </Layout>
     );
-  if (error)
+  }
+  if (error) {
+    console.log(error);
     return (
       <Layout>
         <div
@@ -137,6 +139,7 @@ const IndexPage = () => {
         </div>
       </Layout>
     );
+  }
   return (
     <Layout>
       <div className={styles.inputField}>
